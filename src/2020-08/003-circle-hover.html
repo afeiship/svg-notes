@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle</title>
+</head>
+
+<body>
+  <style>
+    #circle {
+      transition: all 2s;
+      stroke-dasharray: 314, 314;
+      stroke-dashoffset: 314;
+    }
+
+    svg:hover #circle {
+      stroke-dashoffset: 0;
+    }
+
+    /* https://www.cnblogs.com/daisygogogo/p/11044353.html */
+  </style>
+
+  <!-- 3.14*80: 251.2 -->
+  <!-- 3.14*8: 25.12 -->
+  <!-- 25.12*25: 628 -->
+  <svg width="200" height="200" viewBox="0 0 200 200">
+    <circle id="circle" cx="100" cy="80" r="50" fill="gray" stroke-width="5" stroke="green" />
+  </svg>
+</body>
+
+</html>

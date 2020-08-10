@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle in Circle</title>
+  <style>
+    #fg-circle {
+      transform: rotate(-90deg);
+      transform-origin: 65px 65px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- stroke-linecap="round" -->
+  <!-- 2PI * 50 -->
+  <!--1deg: 314/360 -->
+  <!-- -31.4: 表示顺时针； 正值: 逆时针 -->
+
+  <svg width="130" height="130">
+    <!-- this is the gray cirle -->
+    <circle id="bg-circle" cx="65" cy="65" r="50" stroke-width="10" stroke="#eee" fill="none"></circle>
+    <circle id="fg-circle" cx="65" cy="65" r="50" stroke-width="10" stroke="#0089FF " fill="none" stroke-dasharray="314"
+      stroke-dashoffset="-31.4"></circle>
+  </svg>
+
+</body>
+
+</html>
