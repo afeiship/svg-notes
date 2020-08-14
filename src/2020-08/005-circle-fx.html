@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle in Circle</title>
+  <style>
+    #fg-circle {
+      transform: rotate(-90deg);
+      transform-origin: 65px 65px;
+      /* transition: stroke-dashoffset 10s; */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- stroke-linecap="round" -->
+  <!-- 2PI * 50 -->
+  <!--1deg: 314/360 -->
+  <!-- -31.4: 表示顺时针； 正值: 逆时针 -->
+
+  <svg width="130" height="130">
+    <circle id="fg-circle" cx="65" cy="65" r="50" stroke-width="10" stroke="#0089FF " fill="none" stroke-dasharray="314"
+      stroke-dashoffset="0"></circle>
+  </svg>
+
+  <button id="btn-countdown">Countdown</button>
+  <script>
+    var el = document.getElementById('btn-countdown');
+    var circle = document.querySelector('svg>circle');
+    var res = el.addEventListener('click', ()=>{
+      console.log('click!');
+      circle.setAttribute('stroke-dashoffset', -314);
+      circle.style.transition = 'stroke-dashoffset linear 5s';
+    });
+
+    circle.addEventListener("transitionend", ()=>{
+      console.log('transition end.');
+    }, false);
+  </script>
+</body>
+
+</html>
